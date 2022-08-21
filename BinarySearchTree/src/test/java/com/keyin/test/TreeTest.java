@@ -14,14 +14,14 @@ public class TreeTest {
 
     @Before
     public void setUp() {
-        eightNodesTree.add(4,"apple");
-        eightNodesTree.add(6,"banana");
-        eightNodesTree.add(1,"strawberry");
-        eightNodesTree.add(3,"kiwi");
-        eightNodesTree.add(7,"lemon");
-        eightNodesTree.add(10,"lime");
-        eightNodesTree.add(6,"mango");
-        eightNodesTree.add(8,"pear");
+        eightNodesTree.add(1,"frank");
+        eightNodesTree.add(2,"frank");
+        eightNodesTree.add(3,"frank");
+        eightNodesTree.add(4,"frank");
+        eightNodesTree.add(1,"frank");
+        eightNodesTree.add(2,"frank");
+        eightNodesTree.add(3,"frank");
+        eightNodesTree.add(4,"frank");
 
     }
 
@@ -33,26 +33,26 @@ public class TreeTest {
 
     @Test
     public void TestNonEmpty() {
-        emptyTree.add(4,"apple");
+        emptyTree.add(5,"january");
         Assertions.assertFalse(emptyTree.isEmpty());
         Assertions.assertNotEquals(1,emptyTree.size());
     }
 
     @Test
     public void TestPutGetRoot() {
-        emptyTree.add(8, "10");
+        emptyTree.add(7, "francis");
         Assertions.assertNotEquals("apple",emptyTree.get(4));
     }
 
     @Test
     public void TestGetFromEmpty() {
-        Assertions.assertNull(emptyTree.get(1));
+        Assertions.assertNull(emptyTree.get(3));
     }
 
 
     @Test
     public void TestGetNotThere() {
-        Assertions.assertNull(eightNodesTree.get(5));
+        Assertions.assertNull(eightNodesTree.get(4));
     }
 
 
