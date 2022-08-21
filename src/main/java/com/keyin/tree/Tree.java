@@ -140,6 +140,7 @@ public class Tree<I extends Number> {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String strDate = dateFormat.format(date);
         System.out.println("Converted String: " + strDate);
+        System.out.println();
         try {
             Connection con = getConnection();
             PreparedStatement posted = con.prepareStatement("INSERT INTO tree (strDate, inputs, treeoutputs) VALUES ('"+strDate+"','"+inputsdb+"','"+treeOutPuts+"')");
@@ -156,7 +157,9 @@ public class Tree<I extends Number> {
             create.executeUpdate();
         }catch(Exception e){System.out.println(e);}
         finally {
-            System.out.println("Database is Ready!");
+            System.out.println();
+            System.out.println("Connected to database.");
+            System.out.println();
         };
     }
     public static Connection getConnection() throws Exception {
@@ -167,7 +170,6 @@ public class Tree<I extends Number> {
             String password = "Keyin2021";
             Class.forName(driver);
             Connection conn = DriverManager.getConnection(url,username,password);
-            System.out.println("connected to MYSQL DB");
             return conn;
         } catch(Exception e) {System.out.println(e);}
         return null;
@@ -191,7 +193,9 @@ public class Tree<I extends Number> {
             createTable();
             String tree_string = gson.toJson(tr);
             post(inputs, tree_string);
-
+            System.out.println();
+            System.out.println("###############################");
+            System.out.println();
             System.out.println("Print array of nodes in order->");
 
             tr.traverseInOrder(tr.root );
